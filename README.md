@@ -40,10 +40,10 @@ javafx:
 
 <table>
     <tr>   
-        <td><img src="/doc/运行截图/01.png"/></td>
+        <td><img src="/doc/运行截图/001.png"/></td>
     </tr>   
     <br> 
     <tr> 
-         <td><img src="/doc/运行截图/02.png"/></td>
+         <td><img src="/doc/运行截图/002.png"/></td>
     </tr>
 </table>
