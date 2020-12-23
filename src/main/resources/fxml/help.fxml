@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171"
+      fx:controller="com.llmoe.print.controller.HelpController">
+    <children>
+        <Label layoutX="36.0" layoutY="55.0" prefHeight="86.0" prefWidth="398.0"
+               text="随便写下啊emmm&#10;客户端采用Socket.io进行通讯&#10;默认Socket端口 17521&#10;改端口的去改配置文件.yml就行了&#10;"/>
+        <Button layoutX="36.0" layoutY="173.0" mnemonicParsing="false" onAction="#doSomething" prefHeight="27.0"
+                prefWidth="147.0" text="点我emm随便放"/>
+    </children>
+</Pane>

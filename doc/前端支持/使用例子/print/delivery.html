@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" xmlns:th="http://www.thymeleaf.org">
+
+<script th:src="@{/assets/hiprint/hiprint.bundle.js}"></script>
+
+<!-- 打印  -->
+<script th:src="@{/assets/hiprint/config-etype-provider.js}"></script>
+<script th:src="@{/assets/hiprint/polyfill.min.js}"></script>
+<script th:src="@{/assets/hiprint/plugins/jquery.minicolors.min.js}"></script>
+<script th:src="@{/assets/hiprint/plugins/JsBarcode.all.min.js}"></script>
+<script th:src="@{/assets/hiprint/plugins/qrcode.js}"></script>
+<script th:src="@{/assets/hiprint/plugins/jquery.hiwprint.js}"></script>
+<script th:src="@{/assets/hiprint/hiprint.config.js}"></script>
+<script th:src="@{/assets/hiprint/socket.io.js}"></script>
+<script th:src="@{/assets/hiprint/toastr.min.js}"></script>
+
+
+<script th:inline="javascript">
+
+    layui.use(['layer', 'form', 'table', 'util'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var form = layui.form;
+
+        //初始化打印插件
+        hiprint.init({providers: [new configElementTypeProvider()]});
+        $.ajax({
+            type: "POST",
+            url: "/pda/print/getPrintInfo",
+            dataType: 'json',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(info),
+            success: function (result) {
+                if (result.code == 0) {
+                    var template = JSON.parse(result.data.printTemplate);
+                    hiprintTemplate = new hiprint.PrintTemplate({template: template});
+                    hiprintTemplate.print2(result.data.printData, {
+                        printer: "打印机名称",
+                        title: 'PDA打印',
+                        height: template.panels[0].height,
+                        width: template.panels[0].width,
+                        printNum: 1,
+                        userName: $("#userName").val()
+                    });
+
+                } else {
+                    mui.toast("打印失败：" + result.msg);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

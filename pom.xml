@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.llmoe</groupId>
+    <artifactId>hiprint_client_java</artifactId>
+    <version>1.0</version>
+    <name>hiprint_client_java</name>
+    <description>xx云打印助手，一个打印客户端工具,基于hiprint</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <dependencies>
+        <!--启动器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--SpringBoot 测试-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xwintop</groupId>
+            <artifactId>xcore</artifactId>
+            <version>0.0.4-SNAPSHOT</version>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>-->
+
+        <!--JavaFx整合Boot-->
+        <dependency>
+            <groupId>de.roskenet</groupId>
+            <artifactId>springboot-javafx-support</artifactId>
+            <version>2.1.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- socket.io服务端-->
+        <dependency>
+            <groupId>com.corundumstudio.socketio</groupId>
+            <artifactId>netty-socketio</artifactId>
+            <version>1.7.18</version>
+        </dependency>
+
+        <!-- socket.io客户端-->
+        <dependency>
+            <groupId>io.socket</groupId>
+            <artifactId>socket.io-client</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- 打印PDF-->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.21</version>
+        </dependency>
+
+        <!-- 打印PDF-->
+
+        <!-- iText Core -->
+ <!--       <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext7-core</artifactId>
+            <version>7.1.9</version>
+            <type>pom</type>
+        </dependency>-->
+
+        <!-- iText pdfHTML add -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>html2pdf</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext-asian</artifactId>
+            <version>5.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf.tool</groupId>
+            <artifactId>xmlworker</artifactId>
+            <version>5.5.13.2</version>
+        </dependency>
+
+        <!--解决中文问题-->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>font-asian</artifactId>
+            <version>7.1.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.3.7</version>
+        </dependency>
+
+        <!--一款免费的PDF转换工具(没有水印但是限制只能10页。够了不需要买收费的)-->
+<!--        <dependency>
+            <groupId>e-iceblue</groupId>
+            <artifactId>spire.pdf.free</artifactId>
+            <version>2.6.3</version>
+        </dependency>-->
+
+        <!-- <dependency>
+             <groupId>io.woo</groupId>
+             <artifactId>htmltopdf</artifactId>
+             <version>1.0.8</version>
+             <scope>compile</scope>
+         </dependency>
+
+         <dependency>
+             <groupId>com.github.jhonnymertz</groupId>
+             <artifactId>java-wkhtmltopdf-wrapper</artifactId>
+             <version>1.1.12-RELEASE</version>
+         </dependency>-->
+
+<!--        <dependency>
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>8.0.8</version>
+        </dependency>-->
+
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>AsposeJavaAPI</id>
+            <name>Aspose Java API</name>
+            <url>https://repository.aspose.com/repo/</url>
+        </repository>
+        <repository>
+            <id>aliyunmaven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>xwintop-maven</id>
+            <url>https://xwintop.gitee.io/maven/repository</url>
+        </repository>
+          <repository>
+              <id>com.e-iceblue</id>
+              <name>e-iceblue</name>
+              <url>http://repo.e-iceblue.com/nexus/content/groups/public/</url>
+          </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.8.3</version>
+                <configuration>
+                    <!-- 启动类 -->
+                    <mainClass>com.llmoe.print.PrintApplication</mainClass>
+                    <!-- 公司名称 -->
+                    <vendor>xx智能</vendor>
+                    <!-- 应用名称 ${project.build.finalName} = ${project.artifactId}-${project.version} -->
+                    <appName>云打印助手</appName>
+                    <!-- 发行版本 -->
+                    <nativeReleaseVersion>${project.version}</nativeReleaseVersion>
+                    <!--
+                        图标设置
+
+                        > 参考：https://stackoverflow.com/questions/15880102/how-to-set-custom-icon-for-javafx-native-package-icon-on-windows
+
+                        # 方式1（按deployDir、appName配置读取ico文件）
+                        # 使用jfx:native打包时，默认会去src/main/deploy/package/windows/${appName}.ico
+                        <deployDir>${project.basedir}/src/main/deploy</deployDir>
+
+                        # 方式2（固定使用一个图标，与版本号无关）
+                        # 优先级高于第一种方式
+                        <bundleArguments>
+                            <icon>${project.basedir}/src/main/resources/icon/icon.ico</icon>
+                        </bundleArguments>
+                     -->
+                    <bundleArguments>
+                        <icon>${project.basedir}/src/main/resources/icon/icon.icns</icon>
+                    </bundleArguments>
+                    <!-- 桌面图标 -->
+                    <needShortcut>true</needShortcut>
+                    <!-- 菜单设置 -->
+                    <needMenu>true</needMenu>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

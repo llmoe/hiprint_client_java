@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="rootAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="480.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.llmoe.print.controller.MainController">
+    <children>
+        <MenuBar prefHeight="30.0" prefWidth="900.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="打印机">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#refreshPrinter" text="刷新打印机列表"/>
+                        <MenuItem mnemonicParsing="false" onAction="#setDefaultPrinter" text="设置默认打印机"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="设置">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#clearLog" text="清空日志"/>
+                        <MenuItem mnemonicParsing="false" onAction="#setting" text="打印设置"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="帮助">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openLogFolderAction" text="打开日志目录"/>
+                        <MenuItem mnemonicParsing="false" onAction="#helpDoc" text="帮助文档"/>
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="关于"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TableView fx:id="printBody" layoutY="30.0" prefHeight="304.0" prefWidth="700.0">
+            <columns>
+                <TableColumn fx:id="printTime" prefWidth="150.0" text="任务时间"/>
+                <TableColumn fx:id="printTemplate" prefWidth="258.0" text="模板"/>
+                <TableColumn fx:id="printUser" prefWidth="75.0" text="操作员"/>
+                <TableColumn fx:id="printName" prefWidth="75.0" text="打印机"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <ImageView fitHeight="52.0" fitWidth="91.0" layoutX="14.0" layoutY="354.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@/icon/icon.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="75.0" layoutY="372.0" text="hiprint 打印助手"/>
+        <Button layoutX="582.0" layoutY="367.0" mnemonicParsing="false" onAction="#testPrint" prefHeight="27.0"
+                prefWidth="118.0" text="测试打印"/>
+        <ListView fx:id="printerList" layoutX="700.0" layoutY="30.0" prefHeight="304.0" prefWidth="200.0"/>
+        <Label layoutX="292.0" layoutY="372.0" text="IP:"/>
+        <TextField editable="false" fx:id="ipAddress" layoutX="317.0" layoutY="367.0"/>
+    </children>
+</AnchorPane>
